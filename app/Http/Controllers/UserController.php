@@ -37,5 +37,20 @@ class UserController extends Controller
             return 'address created';
         }
     }
+    public function phoneNumber()
+    {
+        $user=User::find(1);
+        return $user->phoneNumber;
+    }
+    public function createPhoneNumber()
+    {
+        $user=User::find(1);
+        $status=$user->phoneNumber()->create([
+            'number'=>'09184971100',
+        ]);
+        if($status){
+            return 'phoneNumber created';
+        }
+    }
 
 }
