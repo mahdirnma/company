@@ -20,8 +20,22 @@ class OrganizationController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function address()
     {
+        $organization=Organization::find(1);
+        return $organization->address;
+    }
+
+    public function createAddress()
+    {
+        $organization=Organization::find(1);
+        $status=$organization->address()->create([
+            'address'=>'lorem 1',
+            'city'=>'florida',
+        ]);
+        if($status){
+            return 'address created';
+        }
     }
 
     /**
