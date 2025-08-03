@@ -14,4 +14,8 @@ class Organization extends Model
     {
         return $this->morphOne(Address::class,'addressable');
     }
+    public function phoneNumber()
+    {
+        return $this->morphOne(PhoneNumber::class,'phoneNumberable');
+    }
 }
