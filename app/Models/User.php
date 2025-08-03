@@ -22,6 +22,10 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public function address()
+    {
+        return $this->morphOne(Address::class,'addressable');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
