@@ -16,8 +16,12 @@ Route::get('/organization',[OrganizationController::class,'index']);
 Route::get('/organization/store',[OrganizationController::class,'store']);
 Route::get('/organization/address',[OrganizationController::class,'address']);
 Route::get('/organization/address/create',[OrganizationController::class,'createAddress']);
+Route::get('/organization/phonenumber',[OrganizationController::class,'phoneNumber']);
+Route::get('/organization/phonenumber/create',[OrganizationController::class,'createPhoneNumber']);
 
 Route::get('/user',[UserController::class,'index']);
 Route::get('/user/store',[UserController::class,'store']);
 Route::get('/user/address',[UserController::class,'address']);
 Route::get('/user/address/create',[UserController::class,'createAddress']);
+Route::get('/user/phonenumber',[UserController::class,'phoneNumber']);
+Route::get('/user/phonenumber/create',[UserController::class,'createPhoneNumber']);

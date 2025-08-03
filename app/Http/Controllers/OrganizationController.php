@@ -37,6 +37,21 @@ class OrganizationController extends Controller
             return 'address created';
         }
     }
+    public function phoneNumber()
+    {
+        $organization=Organization::find(1);
+        return $organization->phoneNumber;
+    }
+    public function createPhoneNumber()
+    {
+        $organization=Organization::find(1);
+        $status=$organization->phoneNumber()->create([
+            'number'=>'09184977900',
+        ]);
+        if($status){
+            return 'phoneNumber created';
+        }
+    }
 
     /**
      * Store a newly created resource in storage.
