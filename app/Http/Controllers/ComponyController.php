@@ -37,6 +37,21 @@ class ComponyController extends Controller
             return 'address created';
         }
     }
+    public function phoneNumber()
+    {
+        $company=Compony::find(2);
+        return $company->phoneNumber;
+    }
+    public function createPhoneNumber()
+    {
+        $company=Compony::find(2);
+        $status=$company->phoneNumber()->create([
+            'number'=>'09184977969',
+        ]);
+        if($status){
+            return 'phoneNumber created';
+        }
+    }
     /**
      * Store a newly created resource in storage.
      */
