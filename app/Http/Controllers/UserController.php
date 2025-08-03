@@ -20,4 +20,22 @@ class UserController extends Controller
             'password'=>bcrypt('123')
         ]);
     }
+    public function address()
+    {
+        $user=User::find(1);
+        return $user->address;
+    }
+
+    public function createAddress()
+    {
+        $user=User::find(1);
+        $status=$user->address()->create([
+            'address'=>'lorem ipsum3',
+            'city'=>'Texas',
+        ]);
+        if($status){
+            return 'address created';
+        }
+    }
+
 }
