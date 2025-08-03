@@ -20,19 +20,31 @@ class ComponyController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function address()
     {
-        //
+        $company=Compony::find(2);
+        return $company->address;
     }
 
+    public function createAddress()
+    {
+        $company=Compony::find(2);
+        $status=$company->address()->create([
+            'address'=>'lorem ipsum3',
+            'city'=>'Texas',
+        ]);
+        if($status){
+            return 'address created';
+        }
+    }
     /**
      * Store a newly created resource in storage.
      */
     public function store(/*StoreComponyRequest $request*/)
     {
         return Compony::create([
-            'name' => 'name 1',
-            'description' => 'description 1',
+            'name' => 'name 2',
+            'description' => 'description 2',
         ]);
     }
 

@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/company',[ComponyController::class,'index']);
 Route::get('/company/store',[ComponyController::class,'store']);
+Route::get('/company/address',[ComponyController::class,'address']);
+Route::get('/company/address/create',[ComponyController::class,'createAddress']);
 
 Route::get('/organization',[OrganizationController::class,'index']);
 Route::get('/organization/store',[OrganizationController::class,'store']);
